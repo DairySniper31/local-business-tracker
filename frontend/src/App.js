@@ -1,12 +1,23 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import {Switch, Route} from "react-router-dom";
+import socket from "./socketConfig";
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
 
-    </div>
-  );
+  componentDidMount() {
+    socket.onopen = () => {
+      console.log('Client connected')
+    }
+  }
+
+  render() {
+    return (
+        <main className="App">
+          <h1>Hello World</h1>
+        </main>
+    )
+  }
 }
 
 export default App;
