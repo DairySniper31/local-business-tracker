@@ -10,6 +10,8 @@ wss.on('connection', function connection(ws) {
         };
         if (message.event === 'search')
             response = searchLogic(message.query)
+        else if (message.event === 'login')
+            response = loginRequest(message.email, message.password)
         ws.send(JSON.stringify(response))
     });
 });
@@ -18,5 +20,14 @@ wss.on('connection', function connection(ws) {
 //TODO Takes in query string
 //TODO Output is a JSON object of an ordered list of business objects
 function searchLogic(query){
+
+}
+
+//TODO Implement Login Request
+//TODO Takes in username and password
+//TODO Searches whether email and password match users
+//TODO If so, it sends back a JSON with a success and the user associated
+//TODO If not, it sends back a JSON with an error message indicating the error
+function loginRequest(email, password) {
 
 }

@@ -7,6 +7,7 @@ import Categories from "./components/Categories";
 import Covid from "./components/Covid";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Search from "./components/Search";
 
@@ -14,8 +15,9 @@ import Search from "./components/Search";
 class App extends Component {
 
   componentDidMount() {
-    socket.onopen = () => {
-      console.log('Client connected')
+      console.log('Application Created')
+      socket.onopen = () => {
+          console.log('Client connected')
     }
   }
 
@@ -29,6 +31,7 @@ class App extends Component {
               <Route path="/categories" component={Categories}/>
               <Route path="/search" component={Search}/>
               <Route path="/profile" component={Profile}/>
+              <Route path="/login" component={Login}/>
           </Switch>
         </main>
     )
