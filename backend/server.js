@@ -15,8 +15,14 @@ wss.on('connection', function connection(ws) {
 });
 
 //TODO Implement Search Logic
+
 //TODO Takes in query string
+
 //TODO Output is a JSON object of an ordered list of business objects
+
 function searchLogic(query){
+    if(query == "Ice Cream"){
+        return iceCreamTest.json;
+    }
 
 }
