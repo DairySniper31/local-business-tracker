@@ -19,6 +19,10 @@ wss.on('connection', function connection(ws) {
                     name: 'User123'
                 }
             }
+        else if (message.event === 'register')
+            response = { event: 'register',
+                success: true
+            }
         ws.send(JSON.stringify(response))
     });
 });
