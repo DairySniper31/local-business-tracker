@@ -18,7 +18,16 @@ class App extends Component {
       console.log('Application Created')
       socket.onopen = () => {
           console.log('Client connected')
-    }
+      }
+      socket.onmessage = event => {
+          console.log('App got a message')
+          const response = JSON.parse(event.data);
+          if (response.event === 'login'){
+              if (response.success){
+                  console.log('App Got Login was a success');
+              }
+          }
+      }
   }
 
   render() {

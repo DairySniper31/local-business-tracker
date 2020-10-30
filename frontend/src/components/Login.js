@@ -77,12 +77,11 @@ class Login extends Component{
             return (<Redirect to={"/profile"}/>)
         }
         return (
-            //TODO Create Login Page
-            <div class="w3-container">
-                <div class="w3-container">
+            <div className="w3-container">
+                <div className="w3-container">
                     <h1 className="w3-container w3-text ">Sign In</h1>
                 </div>
-                <div class="w3-display-middle">
+                <div className="w3-display-middle">
                     <div className="w3-container">
                         <label id="googleLogin"
                                class="w3-button"
@@ -90,20 +89,20 @@ class Login extends Component{
                             Sign in with Google
                         </label>
                     </div>
-                    <form class="w3-panel"
+                    <form className="w3-panel"
                           action={"."}
                           onSubmit={event => {
                               event.preventDefault();
                               this.loginUser()
                           }}>
-                        <input class="w3-input w3-border"
+                        <input className="w3-input w3-border"
                                type={"email"}
                                id={"email"}
                                placeholder={"Email"}
                                value={this.state.email}
                                onChange={event => this.setState({email: event.target.value})}
                         />
-                        <input class="w3-input w3-border"
+                        <input className="w3-input w3-border"
                                type={"password"}
                                id={"password"}
                                placeholder={"Password"}
@@ -115,8 +114,8 @@ class Login extends Component{
                                value={"Login"}
                         />
                     </form>
-                    <label class="w3-text-red">{this.state.error}</label>
-                    <div class="w3-text-light-blue">
+                    <label className="w3-text-red">{this.state.error}</label>
+                    <div className="w3-text-light-blue">
                         <NavLink to ="/register">
                             New User? Sign up here!
                         </NavLink>
@@ -126,12 +125,5 @@ class Login extends Component{
         )
     }
 }
-const responseGoogle = (response) => {
-    console.log("Success")
-    console.log(response)
-}
-const responseFailure = (response) => {
-    console.log('Failure')
-    console.log(response)
-}
+
 export default Login;
