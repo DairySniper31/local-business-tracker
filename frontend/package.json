@@ -9,6 +9,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-google-login": "^5.1.22",
     "react-scripts": "3.4.3"
   },
   "scripts": {
