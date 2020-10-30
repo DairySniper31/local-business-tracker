@@ -1,5 +1,8 @@
 import React, {Component} from "react";
+import {Redirect} from "react-router-dom"
+
 import "./Login.css";
+import "../static/w3.css"
 
 import socket from "../socketConfig";
 import {NavLink} from "react-router-dom";
@@ -39,10 +42,7 @@ class Login extends Component{
             if (response.event === 'login'){
                 if (response.success){
                     console.log('Login was a success');
-                    this.setState({loggedIn: true});
-                } else {
-                    console.log('Error occurred');
-                    this.setState({error: response.error})
+                    this.setState({loggedIn: true, email: '', password: '', error: ''})
                 }
             }
         }
@@ -51,66 +51,77 @@ class Login extends Component{
     loginUser = () => {
         console.log('Login was requested');
         //TODO Check if email and password are alphanumeric and fulfill our email/password guidelines
-        const message = {
-            event: 'login',
-            email: this.state.email,
-            password: this.state.password
+        if (this.state.email === 'User123@rit.edu' && this.state.password === 'admin'){
+            const message = {
+                event: 'login',
+            }
+            socket.send(JSON.stringify(message));
+            console.log("Sending Login to server")
         }
-        socket.send(JSON.stringify(message));
+        else{
+            this.setState({password: '', error: 'Email must be User123@rit.edu and password must be admin'})
+            console.log("Login Error Occurred")
+        }
+        // This is to send to the server, not used to beta
+        // const message = {
+        //     event: 'login',
+        //     email: this.state.email,
+        //     password: this.state.password
+        // }
+        // socket.send(JSON.stringify(message));
 
     }
 
     render() {
+        if (this.state.loggedIn){
+            return (<Redirect to={"/profile"}/>)
+        }
         return (
             //TODO Create Login Page
-            <div>
-                <h1>Hello Login</h1>
-                <div>
-                    <button id="googleLogin">Sign in with Google</button>
+            <div class="w3-container">
+                <div class="w3-container">
+                    <h1 className="w3-container w3-text ">Sign In</h1>
                 </div>
-                <div>
-                    <form action="."
+                <div class="w3-display-middle">
+                    <div className="w3-container">
+                        <label id="googleLogin"
+                               class="w3-button"
+                        >
+                            Sign in with Google
+                        </label>
+                    </div>
+                    <form class="w3-panel"
+                          action={"."}
                           onSubmit={event => {
-                              event.preventDefault()
+                              event.preventDefault();
                               this.loginUser()
-                              this.setState({
-                                  email: '',
-                                  password: ''
-                              })
                           }}>
-                        <input
-                            type={'email'}
-                            id={'email'}
-                            placeholder={'Email'}
-                            value={this.state.email}
-                            onChange={event => this.setState({email: event.target.value})}
-                        /><br/>
-                        <input
-                            type={'password'}
-                            id={'password'}
-                            placeholder={'Password'}
-                            value={this.state.password}
-                            onChange={event => this.setState({password: event.target.value})}
-                        /><br/>
-                        <input
-                            type={'submit'}
-                            value={'Login'}
+                        <input class="w3-input w3-border"
+                               type={"email"}
+                               id={"email"}
+                               placeholder={"Email"}
+                               value={this.state.email}
+                               onChange={event => this.setState({email: event.target.value})}
                         />
-                    </form><br/>
-                    <label>
-                        {this.state.error}
-                    </label><br/>
-                    <NavLink to ="/register">
-                        New User? Sign up here!
-                    </NavLink>
+                        <input class="w3-input w3-border"
+                               type={"password"}
+                               id={"password"}
+                               placeholder={"Password"}
+                               value={this.state.password}
+                               onChange={event => this.setState({password: event.target.value})}
+                        /><br/>
+                        <input className="w3-button w3-border w3-blue"
+                               type={"submit"}
+                               value={"Login"}
+                        />
+                    </form>
+                    <label class="w3-text-red">{this.state.error}</label>
+                    <div class="w3-text-light-blue">
+                        <NavLink to ="/register">
+                            New User? Sign up here!
+                        </NavLink>
+                    </div>
                 </div>
-                {/*Google Login stuff, stubbed it out until I can get it working-->
-                <!--<GoogleLogin
-                    clientId="799457781790-kh1al9dbalr3s5i7hcusqgl80eat5g41.apps.googleusercontent.com"
-                    onSuccess={responseGoogle}
-                    onFailure={responseFailure}
-                    isSignedIn={true}
-                />-->*/}
             </div>
         )
     }

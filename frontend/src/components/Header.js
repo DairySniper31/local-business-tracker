@@ -4,6 +4,8 @@ import {NavLink} from "react-router-dom";
 import socket from '../socketConfig';
 
 import "./Header.css";
+import "../static/w3.css";
+
 //TODO Put in actual logo, image file should be kept in public
 import logo from "../static/placeholder.jpg";
 
@@ -23,6 +25,7 @@ class Header extends Component{
     componentDidMount() {
         console.log('Header Bar Loaded')
         socket.onmessage = evt => {
+            console.log('Received a message in Header')
             const response = JSON.parse(evt.data);
             if (response.event === 'login' && response.success){
                 console.log("Login event made")
@@ -36,30 +39,25 @@ class Header extends Component{
         return (
             //TODO Make this header look like Detailed design
             //TODO Figure out how this is going to change from login to welcome
-            //Links to all major pages in detailed description
-            <header>
-                <nav>
-                    <u1>
-                        <li>
-                            <NavLink exact to="/">
-                                <img src={logo} alt="Placeholder image for Local Business Tracker Logo"/>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/covid">COVID-19 Information</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/search">Search</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/categories">Categories</NavLink>
-                        </li>
-                        <li>
-                            <Welcome login={this.state.loggedIn} name={this.state.user.name}/>
-                        </li>
-                    </u1>
-                </nav>
-            </header>
+            <div class="w3-container w3-white">
+                <div  class="w3-bar">
+                    <div class="w3-bar-item w3-button w3-mobile">
+                        <NavLink exact to="/">Home</NavLink>
+                    </div>
+                    <div className="w3-bar-item w3-button w3-mobile">
+                        <NavLink to="/covid">COVID-19 Information</NavLink>
+                    </div>
+                    <div className="w3-bar-item w3-button w3-mobile">
+                        <NavLink to="/search">Search</NavLink>
+                    </div>
+                    <div className="w3-bar-item w3-button w3-mobile">
+                        <NavLink to="/categories">Categories</NavLink>
+                    </div>
+                    <div className="w3-bar-item w3-button w3-mobile">
+                        <Welcome login={this.state.loggedIn} name={this.state.user.name}/>
+                    </div>
+                </div>
+            </div>
         )
     }
 }
