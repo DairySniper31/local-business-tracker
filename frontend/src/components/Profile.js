@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+
 import "../static/w3.css";
 import "./Profile.css";
 
@@ -45,15 +46,14 @@ class Profile extends Component{
                             imgsrc={GalesImg}
                             ratesrc={TwoRate}
                             ratetext={"User123 Rating: " +
-                            "Of all th local shops, I wouldn't make this one my first choice. " +
+                            "Of all the local shops, I wouldn't make this one my first choice. " +
                             "It used to be a lot better!"}
                     />
                     <Review name={'smiling'}
                             imgsrc={SmilingImg}
                             ratesrc={ThreeRate}
                             ratetext={"User123 Rating: " +
-                            "Of all the local shops, I wouldn't make this one my first choice. " +
-                            "It used to be a lot better!"}
+                            "This local shop has okay homemade ice cream, but the workers are kind!"}
                     />
                 </div>
             </div>
@@ -65,12 +65,7 @@ function Review(props) {
     return (
         <div className="w3-row-padding">
             <div className="w3-quarter">
-                <NavLink to={{
-                    pathname: '/business',
-                    state: {
-                        name: props.name
-                    }
-                }}>
+                <NavLink to={'/business/' + props.name + ''}>
                     <img src={props.imgsrc} className="w3-image"/>
                 </NavLink>
             </div>

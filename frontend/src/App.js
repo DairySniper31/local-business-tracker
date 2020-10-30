@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Search from "./components/Search";
+import Business from "./components/Business";
 
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
               <Route path="/search" component={Search}/>
               <Route path="/profile" component={Profile}/>
               <Route path="/login" component={Login}/>
+              <Route path="/business" component={Business}/>
           </Switch>
         </main>
     )
