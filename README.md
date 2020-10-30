@@ -1,7 +1,6 @@
 # local-business-tracker
 
-To access homepage: https://DairySniper31.github.io/local-business-tracker/
-(currently not working due to git-upload-pack not being found, please download and follow manual instructions at the bottom)
+To access homepage: https://DairySniper31.github.io/
 
 Team Status report: https://docs.google.com/document/d/1f9iIOaUCUoaaGe2l5fE8Ka1WgHihjQRaT_qy1j0Hp08/edit?usp=sharing
 
