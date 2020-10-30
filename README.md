@@ -1,7 +1,6 @@
 # local-business-tracker
 
 To access homepage: https://DairySniper31.github.io/local-business-tracker/
-(currently not working due to git-upload-pack not being found)
 
 Team Status report: https://docs.google.com/document/d/1f9iIOaUCUoaaGe2l5fE8Ka1WgHihjQRaT_qy1j0Hp08/edit?usp=sharing
 
@@ -32,4 +31,4 @@ Recommended IDE: Webstorm 2020
 
 To run application:
 Go to terminal and cd into the frontend repository. Then run "npm install prop-types" This should create the node modules library root in your frontend repository.
-You can then access your IDE and navigate to the frontend and backend package.json files. There you will find scripts that you can then run. The working application will then b hosted on localhost:3000.
+You can then access your IDE and navigate to the frontend and backend package.json files. There you will find scripts that you can then run. The working application will then be hosted on localhost:3000.
