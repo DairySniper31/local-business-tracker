@@ -51,8 +51,10 @@ class Register extends Component {
             const message = {
                 event: 'register',
             }
-            socket.send(JSON.stringify(message));
-            console.log("Sending Registration to server")
+            // socket.send(JSON.stringify(message));
+            // console.log("Sending Registration to server")
+            console.log('Register was a success');
+            this.setState({registered: true})
         } else {
             this.setState({
                 password: '',

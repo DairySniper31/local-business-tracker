@@ -52,11 +52,13 @@ class Login extends Component{
         console.log('Login was requested');
         //TODO Check if email and password are alphanumeric and fulfill our email/password guidelines
         if (this.state.email === 'User123@rit.edu' && this.state.password === 'admin'){
-            const message = {
-                event: 'login',
-            }
-            socket.send(JSON.stringify(message));
-            console.log("Sending Login to server")
+            // const message = {
+            //     event: 'login',
+            // }
+            // socket.send(JSON.stringify(message));
+            // console.log("Sending Login to server")
+            console.log('Login was a success');
+            this.setState({loggedIn: true, email: '', password: '', error: ''})
         }
         else{
             this.setState({password: '', error: 'Email must be User123@rit.edu and password must be admin'})
