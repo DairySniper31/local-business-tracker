@@ -5,7 +5,7 @@ class Covid extends Component{
     render() {
         return (
             <div>
-                <h1>COVID-19</h1>
+                <h1>COVID-19 Sympotoms</h1>
                 <p>COVID-19 affects different people in different ways. Infected people have had a wide range of symptoms reported – from mild symptoms to severe illness.</p> <br/>
                 <p>Symptoms may appear 2-14 days after exposure to the virus. People with these symptoms may have COVID-19: <br/>
                         - Fever or chills <br />
