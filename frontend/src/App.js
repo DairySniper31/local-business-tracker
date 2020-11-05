@@ -37,7 +37,7 @@ class App extends Component {
         <main className="App">
           <Header/>
           <Switch>
-              <Route exact path="/local-business-tracker" component={Home}/>
+              <Route exact path="/" component={Home}/>
               <Route path="/covid" component={Covid}/>
               <Route path="/categories" component={Categories}/>
               <Route path="/search" component={Search}/>
