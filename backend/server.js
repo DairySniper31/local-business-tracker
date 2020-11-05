@@ -2,6 +2,10 @@ const WebSocket = require('ws');
 
 const wss = new WebSocket.Server({ port: 3001 });
 
+const Database = require("./Database")
+
+var database = new Database();
+
 wss.on('connection', function connection(ws) {
     ws.on('message', function incoming(data) {
         const message = JSON.parse(data);

@@ -1,3 +1,10 @@
-{
-
-}
+[
+  {
+    "id": 0,
+    "email": "User123@rit.edu",
+    "password": "admin",
+    "fname": "User",
+    "lname": "123",
+    "bio": "This local has the best homemade ice cream and very nice workers.10/10 would recommend checking it out"
+  }
+]

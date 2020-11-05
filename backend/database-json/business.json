@@ -1,3 +1,14 @@
-{
-
-}
+[
+  {
+    "id": 0,
+    "name": "Sundaes on Sundays",
+    "address": "123 Sunday Street, Rochester NY 14623",
+    "website": "sundaeonsunday.com",
+    "phone": "(585) 123-4567",
+    "hours": {
+      "start": 8,
+      "end": 20
+    },
+    "regulations": "We ask that you always wear a mask unless eating ice cream!\n\nFollow social distancing signs\n\nLimited Capacity Inside: 15\n\nGo to sundaesonsunday.com for more protocols!"
+  }
+]
