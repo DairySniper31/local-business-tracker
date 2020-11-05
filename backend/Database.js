@@ -23,6 +23,19 @@ class Database {
             this.businesses = JSON.parse(data.toString());
         })
     }
+
+    addUser(email, password, fname, lname, bio){
+        let user = {
+            "id": this.users.length,
+            "email": email,
+            "password": password,
+            "fname": fname,
+            "lname": lname,
+            "bio": bio
+        }
+
+        this.users.push(user);
+    }
 }
 
 module.exports = Database
