@@ -37,8 +37,6 @@ class Header extends Component{
 
     render() {
         return (
-            //TODO Make this header look like Detailed design
-            //TODO Figure out how this is going to change from login to welcome
             <div class="w3-container w3-white">
                 <div  class="w3-bar">
                     <div class="w3-bar-item w3-button w3-mobile">

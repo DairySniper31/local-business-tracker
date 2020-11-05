@@ -49,7 +49,6 @@ class Home extends Component{
     }
 
     render() {
-        //TODO Create Home Page
         if (this.state.searched) {
             this.setState({searched: false})
             return (<Redirect to={"/search"}/>);

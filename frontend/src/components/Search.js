@@ -20,7 +20,6 @@ class Search extends Component{
 
     render() {
         return (
-            //TODO Create Search Page
             <div className='w3-row'>
                 <div className='w3-half w3-panel w3-border'>
                     <h1>Search Results: Ice Cream</h1>
@@ -67,7 +66,6 @@ class SimpleMap extends Component {
 
     render() {
         return (
-            // Important! Always set the container height explicitly
             <div style={{ height: '100vh', width: '100%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyATxDEY-PbeclUr3zQbSYNByl3gEkv6IEQ'}}
