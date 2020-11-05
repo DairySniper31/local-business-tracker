@@ -42,7 +42,7 @@ class Header extends Component{
             <div class="w3-container w3-white">
                 <div  class="w3-bar">
                     <div class="w3-bar-item w3-button w3-mobile">
-                        <NavLink exact to="/">Home</NavLink>
+                        <NavLink exact to="/local-business-tracker">Home</NavLink>
                     </div>
                     <div className="w3-bar-item w3-button w3-mobile">
                         <NavLink to="/covid">COVID-19 Information</NavLink>
