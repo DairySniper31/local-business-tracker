@@ -161,9 +161,13 @@ function Rating() {
             <input className="w3-button w3-border w3-blue"
                    type={"submit"}
                    value={"Submit Review"}
+                   onClick={submit}
             />
         </form>
     )
+}
+function submit(){
+    alert("Review Submitted!");
 }
 
 function Gales() {
