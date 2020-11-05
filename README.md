@@ -1,6 +1,6 @@
 # local-business-tracker
 
-To access homepage: https://DairySniper31.github.io/local-business-tracker/ and then click on home
+To access homepage (DO NOT USE CHROME): https://DairySniper31.github.io/local-business-tracker/ 
 
 Team Status report: https://docs.google.com/document/d/1f9iIOaUCUoaaGe2l5fE8Ka1WgHihjQRaT_qy1j0Hp08/edit?usp=sharing
 
