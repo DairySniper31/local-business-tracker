@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/local-business-tracker/static/css/main.3c51cdd2.chunk.css",
+    "main.js": "/local-business-tracker/static/js/main.b76cf19d.chunk.js",
+    "main.js.map": "/local-business-tracker/static/js/main.b76cf19d.chunk.js.map",
+    "runtime-main.js": "/local-business-tracker/static/js/runtime-main.c0d65440.js",
+    "runtime-main.js.map": "/local-business-tracker/static/js/runtime-main.c0d65440.js.map",
+    "static/js/2.2182a150.chunk.js": "/local-business-tracker/static/js/2.2182a150.chunk.js",
+    "static/js/2.2182a150.chunk.js.map": "/local-business-tracker/static/js/2.2182a150.chunk.js.map",
+    "index.html": "/local-business-tracker/index.html",
+    "precache-manifest.92b05c415d881ab111a15496c1ed2e63.js": "/local-business-tracker/precache-manifest.92b05c415d881ab111a15496c1ed2e63.js",
+    "service-worker.js": "/local-business-tracker/service-worker.js",
+    "static/css/main.3c51cdd2.chunk.css.map": "/local-business-tracker/static/css/main.3c51cdd2.chunk.css.map",
+    "static/js/2.2182a150.chunk.js.LICENSE.txt": "/local-business-tracker/static/js/2.2182a150.chunk.js.LICENSE.txt",
+    "static/media/galeslogo.png": "/local-business-tracker/static/media/galeslogo.79afa8a7.png",
+    "static/media/rating2.png": "/local-business-tracker/static/media/rating2.083bb09d.png",
+    "static/media/rating3.png": "/local-business-tracker/static/media/rating3.43a6b37e.png",
+    "static/media/rating5.png": "/local-business-tracker/static/media/rating5.20f639ae.png",
+    "static/media/smillinglogo.png": "/local-business-tracker/static/media/smillinglogo.0ae863c0.png",
+    "static/media/sundaeslogo.png": "/local-business-tracker/static/media/sundaeslogo.be9189cc.png",
+    "static/media/user123.png": "/local-business-tracker/static/media/user123.b28faa37.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c0d65440.js",
+    "static/js/2.2182a150.chunk.js",
+    "static/css/main.3c51cdd2.chunk.css",
+    "static/js/main.b76cf19d.chunk.js"
+  ]
+}
