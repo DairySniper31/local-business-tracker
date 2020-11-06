@@ -63,7 +63,7 @@ class Database {
 
     checkUser(email, password){
         let user;
-        for (user in this.users){
+        for ( user of this.users){
             if (user.email === email && user.password === password)
                 return true
         }
@@ -72,7 +72,7 @@ class Database {
 
     getUser(email, password){
         let user;
-        for (user in this.users){
+        for (user of this.users){
             if (user.email === email && user.password === password)
                 return user
         }

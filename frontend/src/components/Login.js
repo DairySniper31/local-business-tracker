@@ -41,9 +41,10 @@ class Login extends Component{
                 window.gapi.signin2.render('googleLogin', params)
             })
         })
-        socket.onmessage = event => {
+        socket.onmessage = evt => {
             console.log('Login Page received a message')
-            const response = JSON.parse(event.data);
+            console.log(evt.data)
+            const response = JSON.parse(evt.data);
             if (response.event === 'login'){
                 if (response.success){
                     console.log('Login was a success');
@@ -59,7 +60,6 @@ class Login extends Component{
 
     loginUser = () => {
         console.log('Login was requested');
-        //TODO Check if email and password are alphanumeric and fulfill our email/password guidelines
         if (this.state.email === '' || this.state.password === ''){
             const error = 'Error occurred: Username and/or password was not given';
             console.log(error);
@@ -69,7 +69,7 @@ class Login extends Component{
             })
         }
         else{
-            console.log('Login was requested');
+            console.log('Login was sent to server');
             const message = {
                 event: 'login',
                 email: this.state.email,

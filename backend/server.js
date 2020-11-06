@@ -14,8 +14,9 @@ wss.on('connection', function connection(ws) {
         };
         if (message.event === 'search')
             response = searchLogic(message.query)
-        else if (message.event === 'login')
+        else if (message.event === 'login') {
             response = loginRequest(message.email, message.password)
+        }
         else if (message.event === 'register')
             response = { event: 'register',
                 success: true
@@ -31,9 +32,6 @@ wss.on('connection', function connection(ws) {
 //TODO Output is a JSON object of an ordered list of business objects
 
 function searchLogic(query){
-    if(query == "Ice Cream"){
-        return iceCreamTest.json;
-    }
 
 }
 
@@ -43,16 +41,18 @@ function searchLogic(query){
 //TODO If so, it sends back a JSON with a success and the user associated
 //TODO If not, it sends back a JSON with an error message indicating the error
 function loginRequest(email, password) {
-    var response = {
-        event: 'login'
-    }
     if (database.checkUser(email, password)){
-        response.success = true
-        response.user = database.getUser(email, password)
-        return response
+        return {
+            event: 'login',
+            success: true,
+            user: database.getUser(email, password)
+        }
     }
     else{
-        response.success = false
-        response.error = "User was not found: Email and/or password was incorrect"
+        return {
+            event: 'login',
+            success: false,
+            error: "User was not found: Email and/or password was incorrect"
+        }
     }
 }
