@@ -6,9 +6,6 @@ import socket from '../socketConfig';
 import "./Header.css";
 import "../static/w3.css";
 
-//TODO Put in actual logo, image file should be kept in public
-import logo from "../static/placeholder.jpg";
-
 //Header Component that is displayed on all pages
 class Header extends Component{
 
@@ -39,9 +36,9 @@ class Header extends Component{
         return (
             //TODO Make this header look like Detailed design
             //TODO Figure out how this is going to change from login to welcome
-            <div class="w3-container w3-white">
-                <div  class="w3-bar">
-                    <div class="w3-bar-item w3-button w3-mobile">
+            <div className="w3-container w3-white">
+                <div  className="w3-bar">
+                    <div className="w3-bar-item w3-button w3-mobile">
                         <NavLink exact to="/local-business-tracker">Home</NavLink>
                     </div>
                     <div className="w3-bar-item w3-button w3-mobile">

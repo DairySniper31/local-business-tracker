@@ -22,7 +22,7 @@ class Home extends Component{
         //Reads messages from server
         socket.onmessage = evt => {
             //JSON Object of the server message
-            const response = JSON.parse(evt.data);
+            //const response = JSON.parse(evt.data);
             //TODO Receive Inputs from Server
         }
     }

@@ -7,6 +7,9 @@ import "../static/w3.css"
 import socket from "../socketConfig";
 import {NavLink} from "react-router-dom";
 
+// //Alphanumeric Letters
+// const letters = /^[0-9a-zA-Z]+$/;
+
 class Login extends Component{
 
     constructor(props) {
@@ -16,14 +19,15 @@ class Login extends Component{
             email: '',
             password: '',
             loggedIn: false,
-            error: ''
+            error: '',
+            user: {}
         }
     }
 
     componentDidMount() {
         console.log("Login Page Loaded")
         window.gapi.load('auth2', () => {
-            window.gapi.auth2. init({
+            window.gapi.auth2.init({
                 client_id: '799457781790-oduvl11ka4fgmghs87kse74kq64qh3u1.apps.googleusercontent.com'
             })
             console.log('API inited')
@@ -38,11 +42,16 @@ class Login extends Component{
             })
         })
         socket.onmessage = event => {
+            console.log('Login Page received a message')
             const response = JSON.parse(event.data);
             if (response.event === 'login'){
                 if (response.success){
                     console.log('Login was a success');
                     this.setState({loggedIn: true, email: '', password: '', error: ''})
+                }
+                else{
+                    console.log('Login was unsuccessful');
+                    this.setState({email: '', password: '', error: response.error, user: response.user})
                 }
             }
         }
@@ -51,27 +60,23 @@ class Login extends Component{
     loginUser = () => {
         console.log('Login was requested');
         //TODO Check if email and password are alphanumeric and fulfill our email/password guidelines
-        if (this.state.email === 'User123@rit.edu' && this.state.password === 'admin'){
-            // const message = {
-            //     event: 'login',
-            // }
-            // socket.send(JSON.stringify(message));
-            // console.log("Sending Login to server")
-            console.log('Login was a success');
-            this.setState({loggedIn: true, email: '', password: '', error: ''})
+        if (this.state.email === '' || this.state.password === ''){
+            const error = 'Error occurred: Username and/or password was not given';
+            console.log(error);
+            this.setState({
+                password: '',
+                error: error
+            })
         }
         else{
-            this.setState({password: '', error: 'Email must be User123@rit.edu and password must be admin'})
-            console.log("Login Error Occurred")
+            console.log('Login was requested');
+            const message = {
+                event: 'login',
+                email: this.state.email,
+                password: this.state.password
+            }
+            socket.send(JSON.stringify(message));
         }
-        // This is to send to the server, not used to beta
-        // const message = {
-        //     event: 'login',
-        //     email: this.state.email,
-        //     password: this.state.password
-        // }
-        // socket.send(JSON.stringify(message));
-
     }
 
     render() {
@@ -81,12 +86,12 @@ class Login extends Component{
         return (
             <div className="w3-container">
                 <div className="w3-container">
-                    <h1 className="w3-container w3-text ">Sign In</h1>
+                    <h1 className="w3-container w3-text">Sign In</h1>
                 </div>
                 <div className="w3-display-middle">
                     <div className="w3-container">
                         <label id="googleLogin"
-                               class="w3-button"
+                               className="w3-button"
                         >
                             Sign in with Google
                         </label>

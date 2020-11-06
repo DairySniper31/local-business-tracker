@@ -15,14 +15,7 @@ wss.on('connection', function connection(ws) {
         if (message.event === 'search')
             response = searchLogic(message.query)
         else if (message.event === 'login')
-            // response = loginRequest(message.email, message.password)
-            response = {
-                event: 'login',
-                success: true,
-                user: {
-                    name: 'User123'
-                }
-            }
+            response = loginRequest(message.email, message.password)
         else if (message.event === 'register')
             response = { event: 'register',
                 success: true
@@ -50,5 +43,16 @@ function searchLogic(query){
 //TODO If so, it sends back a JSON with a success and the user associated
 //TODO If not, it sends back a JSON with an error message indicating the error
 function loginRequest(email, password) {
-
+    var response = {
+        event: 'login'
+    }
+    if (database.checkUser(email, password)){
+        response.success = true
+        response.user = database.getUser(email, password)
+        return response
+    }
+    else{
+        response.success = false
+        response.error = "User was not found: Email and/or password was incorrect"
+    }
 }

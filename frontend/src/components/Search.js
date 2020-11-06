@@ -14,10 +14,6 @@ import ThreeStars from "../static/images/star3.png";
 import {NavLink} from "react-router-dom";
 
 class Search extends Component{
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             //TODO Create Search Page
@@ -87,7 +83,7 @@ function Business(props) {
                 <h3 className='w3-text'>
                     {props.name}
                 </h3>
-                <img src={props.ratesrc} className='w3-image'/>
+                <img src={props.ratesrc} className='w3-image' alt={'Overall rating of the business'}/>
                 <p className='w3-text'>
                     {props.hours}
                 </p>
@@ -97,7 +93,7 @@ function Business(props) {
             </div>
             <div className='w3-quarter'>
                 <NavLink to={props.url} >
-                    <img src={props.imgsrc} className='w3-image'/>
+                    <img src={props.imgsrc} className='w3-image' alt={'Business Logo'}/>
                 </NavLink>
             </div>
         </div>

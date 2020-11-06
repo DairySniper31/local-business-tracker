@@ -22,7 +22,7 @@ class Profile extends Component{
                     <h1 className="w3-container w3-text">
                         User123
                     </h1>
-                    <img src={User123} className="w3-image w3-container"/>
+                    <img src={User123} className="w3-image w3-container" alt={'User profile pic'}/>
                     <div className="w3-panel w3-text w3-light-gray">
                         <h4>User Info:</h4>
                         <p>Total Reviews: 4</p>
@@ -66,11 +66,11 @@ function Review(props) {
         <div className="w3-row-padding">
             <div className="w3-quarter">
                 <NavLink to={'/business/' + props.name + ''}>
-                    <img src={props.imgsrc} className="w3-image"/>
+                    <img src={props.imgsrc} className="w3-image" alt={'Business logo'}/>
                 </NavLink>
             </div>
             <div className="w3-quarter">
-                <img src={props.ratesrc} className="w3-image"/>
+                <img src={props.ratesrc} className="w3-image" alt={'Review Rating'}/>
             </div>
             <div className="w3-half">
                 <p className="w3-text">

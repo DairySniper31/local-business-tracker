@@ -55,10 +55,10 @@ function Sundaes() {
     return (
         <div className="w3-row">
             <div className="w3-quarter">
-                <img src={SundaesImg} className="w3-image w3-container"/>
+                <img src={SundaesImg} className="w3-image w3-container" alt={'Sundae logo'}/>
                 <div className="w3-panel w3-text">
                     <h4>Current Rating</h4>
-                    <img src={FourStars} className="w3-image w3-container"/>
+                    <img src={FourStars} className="w3-image w3-container" alt={'Four Star Rating'}/>
                 </div>
                 <Rating/>
             </div>
@@ -106,11 +106,11 @@ function Review(props) {
         <div className="w3-row-padding">
             <div className="w3-quarter">
                 <NavLink to={'/profile'}>
-                    <img src={User123} className="w3-image"/>
+                    <img src={User123} className="w3-image" alt={'User profile pic'}/>
                 </NavLink>
             </div>
             <div className="w3-quarter">
-                <img src={props.ratesrc} className="w3-image"/>
+                <img src={props.ratesrc} className="w3-image" alt={'Rating of review'}/>
             </div>
             <div className="w3-half">
                 <p className="w3-text">
@@ -122,8 +122,8 @@ function Review(props) {
 }
 
 function Rating() {
-    var text = ''
-    var rate = 0
+    let text = ''
+    let rate = 0
     return(
         <form className="w3-panel"
               action={"."}
@@ -161,29 +161,29 @@ function Rating() {
             <input className="w3-button w3-border w3-blue"
                    type={"submit"}
                    value={"Submit Review"}
-                   onClick={submit}
+                   onClick={submit(rate, text)}
             />
         </form>
     )
 }
-function submit(){
-    alert("Review Submitted!");
+function submit(rate, text){
+    alert("Review Submitted!" + rate + text);
 }
 
 function Gales() {
-    var reviews = [{
+    const reviews = [{
         name: 'User123',
         text: "Of all the local shops, I wouldn't make this one my first choice. It used to be a lot better!",
         rate: 2
     }
-    ]
+    ];
     return (
         <div className="w3-row">
             <div className="w3-quarter">
-                <img src={GalesImg} className="w3-image w3-container"/>
+                <img src={GalesImg} className="w3-image w3-container" alt={"Gale's Logo"}/>
                 <div className="w3-panel w3-text">
                     <h4>Current Rating</h4>
-                    <img src={TwoStars} className="w3-image w3-container"/>
+                    <img src={TwoStars} className="w3-image w3-container" alt={'Current Rating'}/>
                 </div>
                 <Rating/>
             </div>
@@ -236,10 +236,10 @@ function Smiling() {
     return (
         <div className="w3-row">
             <div className="w3-quarter">
-                <img src={SmilingImg} className="w3-image w3-container"/>
+                <img src={SmilingImg} className="w3-image w3-container" alt={'Smiling logo'}/>
                 <div className="w3-panel w3-text">
                     <h4>Current Rating</h4>
-                    <img src={ThreeStars} className="w3-image w3-container"/>
+                    <img src={ThreeStars} className="w3-image w3-container" alt={'Three star rating'}/>
                 </div>
                 <Rating/>
             </div>

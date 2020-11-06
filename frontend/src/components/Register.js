@@ -48,9 +48,7 @@ class Register extends Component {
             this.state.password !== '' &&
             this.state.confPassword !== '' &&
             this.state.password === this.state.confPassword ) {
-            const message = {
-                event: 'register',
-            }
+            //const message = {event: 'register'}
             // socket.send(JSON.stringify(message));
             // console.log("Sending Registration to server")
             console.log('Register was a success');

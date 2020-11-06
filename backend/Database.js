@@ -1,23 +1,19 @@
 const fs = require('fs');
 
-import userFile from "./database-json/users.json";
-import reviewFile from "./database-json/reviews.json";
-import businessFile from "./database-json/business.json"
-
 class Database {
 
     constructor() {
-        fs.readFile(userFile, (err, data) => {
+        fs.readFile("./database-json/users.json", (err, data) => {
             if (err) throw err;
 
             this.users = JSON.parse(data.toString());
         })
-        fs.readFile(reviewFile, (err, data) => {
+        fs.readFile("./database-json/reviews.json", (err, data) => {
             if (err) throw err;
 
             this.reviews = JSON.parse(data.toString());
         })
-        fs.readFile(businessFile, (err, data) => {
+        fs.readFile("./database-json/business.json", (err, data) => {
             if (err) throw err;
 
             this.businesses = JSON.parse(data.toString());
@@ -35,6 +31,54 @@ class Database {
         }
 
         this.users.push(user);
+    }
+
+    addBusiness(name, address, website, phone, start, end, regulations){
+        let business = {
+            "id": this.businesses.length,
+            "name": name,
+            "address": address,
+            "website": website,
+            "phone": phone,
+            "hours": {
+                "start": start,
+                "end": end
+            },
+            "regulations": regulations
+        }
+
+        this.businesses.push(business)
+    }
+
+    addReview(userID, businessID, rating, description){
+        let review ={
+            "userID": userID,
+            "businessID": businessID,
+            "rating": rating,
+            "description": description
+        }
+
+        this.reviews.push(review)
+    }
+
+    checkUser(email, password){
+        let user;
+        for (user in this.users){
+            if (user.email === email && user.password === password)
+                return true
+        }
+        return false
+    }
+
+    getUser(email, password){
+        let user;
+        for (user in this.users){
+            if (user.email === email && user.password === password)
+                return user
+        }
+        return {
+            "error": "User not found"
+        }
     }
 }
 
