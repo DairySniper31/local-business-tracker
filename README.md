@@ -1,6 +1,6 @@
 # local-business-tracker
 
-To access homepage (DO NOT USE CHROME): https://DairySniper31.github.io/local-business-tracker/ 
+To access homepage (DO NOT USE CHROME): https://master.d25np0lj9k9vdu.amplifyapp.com/
 
 Team Status report: https://docs.google.com/document/d/1f9iIOaUCUoaaGe2l5fE8Ka1WgHihjQRaT_qy1j0Hp08/edit?usp=sharing
 
